@@ -18,7 +18,7 @@ class PageListHdl(WwwBaseHdl):
         return
 
 
-class PageIconView(WwwBaseHdl):
+class PageIconViewHdl(WwwBaseHdl):
     def get(self):
         key = self.get_argument('key', '')
         if key:

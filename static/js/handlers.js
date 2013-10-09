@@ -116,13 +116,14 @@ function uploadSuccess(file, serverData) {
 		progress.setComplete();
 		progress.setStatus("Complete.");
 		progress.toggleCancel(false);
-                var ret = eval('(' + serverData + ')');
-                //按实际的应用需求修改判断上传成功的标准
-                if (ret.key) {
-                    alert(ret.key);
-                } else {
-                    alert("上传失败");
-                }
+        var ret = eval('(' + serverData + ')');
+        //按实际的应用需求修改判断上传成功的标准
+        if (ret.key) {
+            var url = "/view?key=" + ret.key;
+            window.location.href = url;
+        } else {
+            alert("上传失败");
+        }
 
 	} catch (ex) {
 		this.debug(ex);
