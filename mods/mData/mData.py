@@ -14,7 +14,7 @@ class mData(object):
         ''' % (table,)
         sql_update = '''
         UPDATE %s SET updated_at=?
-        '''
+        ''' % (table,)
         now = int(time.time())
         self.dbConn.execute(sql, (fileKey, uid, now))
         res_update = self.dbConn.execute(sql_update, (now,))
